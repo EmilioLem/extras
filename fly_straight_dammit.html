@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jake Sully's formula</title>
+  <style>
+    *{
+      background: black;
+      color: white;
+    }
+    #canvas{
+      border: 5px solid blue;
+      /* transform: scaleY(0.25); baaad*/
+    }
+    #info{
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Callate y vuela bien!</h2>
+  <canvas id="canvas" width="1000" height="700"></canvas>
+  <br>
+  <br>
+  <div id="info">
+    <img src="./ifNoCommonFactor.jpg" alt="ifNoCommonFactor_image" width="500px">
+    <br>
+    <p>Si <b>n</b> y <b>a(n-1)</b> tienen un común divisor, <b>a(n)</b> se vuelve <b>a(n-1)+n+1</b></p>
+    <!-- <br> -->
+    <p>---------------------------</p>
+    <!-- <br> -->
+    <p>Si sí tiene un <i>común divisor</i>, <b>a(n)</b> se vuelve la división del <b>a(n-1)</b> entre el <i>máximo común
+        divisor</i> de <u>a(n-1)</u> y <u>n</u>.</p>
+    <br>
+    <a href="./index.html">Volver al menú</a>
+    <br>
+    <br>
+  </div>
+  <script>
+    let canvas = document.getElementById("canvas");
+    let canvasCTX = canvas.getContext("2d");
+
+    let xSize = canvas.width - 20;
+    let ySize = canvas.height;
+
+    let array = [1, 1];
+
+    drawC(canvasCTX, 0 + 10, ySize - (1) - 10, 1, "red");
+    drawC(canvasCTX, 1 + 10, ySize - (1) - 10, 1, "red");
+
+    //let maxValY = 10;
+    for(let i=2; i<xSize; i++){
+
+      let value = (gcd_rec(array[i-1], i)>1)? array[i - 1] / gcd_rec(array[i - 1], i) : array[i-1] + i+ 1;
+
+
+      //drawC(canvasCTX, i+10, ySize - (value) - 10, 1, "orange"); //El canvas ya sólo muestra versión con datos escalados, 1/4 más chico.
+      drawC(canvasCTX, i + 10, ySize - (value/4) - 10, 1, "yellow");
+      array.push(value);      
+    }
+    console.table(array);
+    
+    function gcd_rec(a, b) { //greatest common divisor, with recursion
+      if (b) {
+        return gcd_rec(b, a % b);
+      } else {
+        return Math.abs(a);
+      }
+    }
+
+    function drawC(ctx, x, y, radius, color) {
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  </script>
+</body>
+</html>
