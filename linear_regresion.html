@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regresión lineal por "cuadrados mínimos"</title>
+  <link rel="shortcut icon" href="./logo_ideas.png">
+  <style>
+    *{
+      color: white;
+      background: black;
+    }
+    #myCanvas{
+      background: black;
+      border: 3px solid blue;
+      margin: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Regresión lineal porel método de "cuadrados mínimos" </h1>
+  <br>
+  <a href="./index.html">Volver al menú</a>
+  <br>
+  <p>Cifras significativas:</p><input type="number" value="2" id="cifSig" min="0" max="10">
+  <br>
+  <h3>Número de elementos: <span id="numEle">_</span></h3>
+  <canvas id="myCanvas" width="640" height="480" onmousedown="getMousePos(event);"></canvas>
+  <br>
+  <br>
+  <h2>Fórmula: <b><span id="mPlace">M</span> X  +  <span id="bPlace">b</span></b></h2>
+  <br>
+  <script>
+    let myCanvas = document.getElementById("myCanvas");
+    let myCtx = myCanvas.getContext("2d");
+    var puntos = [];
+
+    myCtx.font = "30px Arial";
+    myCtx.fillStyle = "green";
+    myCtx.fillText("De click para agregar puntos...", 10, 50);
+
+    function getMousePos(evt) {
+      var rect = evt.target.getBoundingClientRect();
+      ///pos = ;
+      logic({ //Ejecuto la función, enviando parámetros X, Y
+        x: Math.round(evt.clientX - rect.left),
+        y: myCanvas.height - Math.round(evt.clientY - rect.top)
+      });
+    }
+    function logic(newPos){
+      //newPos.y = /*myCanvas.width -*/ newPos.y;
+      //drawCircle(myCtx, newPos.x, newPos.y, "red"); ///Alalkaslkas
+      /*myCtx.fillStyle = "red";
+      myCtx.beginPath();*
+      myCtx.arc(newPos.x, myCanvas.height - newPos.y, 3, 0, Math.PI * 2);
+      myCtx.fill();*/
+      //Hemos dibujado el punto nuevo
+      puntos.push(newPos);
+      
+      let sumX = 0, sumY = 0, sumXY = 0, sumXsq = 0;
+      for(let i=0; i<puntos.length; i++){
+        sumX  +=  puntos[i].x;
+        sumY  +=  puntos[i].y;
+        sumXY +=  puntos[i].x * puntos[i].y;
+        sumXsq+= puntos[i].x * puntos[i].x;
+      }
+      console.log(newPos);
+      /*/ya tenemos las variables necesarias, procedemos a usar fórmulas...
+      console.log("...   _ _ _   ...");
+      console.log(puntos.length);
+      console.log("...   _ _ _   ...");
+      console.log(sumX);
+      console.log(sumY);
+      console.log(sumXY);
+      console.log(sumXsq);
+
+      console.log(puntos.length * sumXY) - (sumX * sumY);
+      console.log(puntos.length * sumXsq) - (sumX * sumX);*/
+      let m = ((puntos.length * sumXY) - (sumX * sumY)) / 
+              /*-------------------------*/
+              ((puntos.length * sumXsq) - (sumX * sumX));
+      console.log(m);
+      
+      let b = (sumY - m * sumX) / puntos.length;
+      console.log(b);
+      
+
+      if(puntos.length>1){
+        let cifSig = document.getElementById("cifSig").value;
+        
+        document.getElementById("mPlace").innerText = Math.round(m * Math.pow(10, cifSig)) / Math.pow(10, cifSig);
+        document.getElementById("bPlace").innerText = Math.round(b * Math.pow(10, cifSig)) / Math.pow(10, cifSig);
+
+        clearSpace(myCtx);
+
+        for (let i = 0; i < myCanvas.width; i++) { //Muestro función
+          drawCircle(myCtx, i, i * m + b, "orange");
+        }
+
+        for(let i=0; i<puntos.length; i++){   //Muestro puntos
+          drawCircle(myCtx, puntos[i].x, puntos[i].y, "red");
+        }
+
+      }else{
+        drawCircle(myCtx, newPos.x, newPos.y, "red");
+      }
+
+      document.getElementById("numEle").innerText = puntos.length;
+    }
+    function drawCircle(ctx, x, y, color){  //Corrige el espejo del canvas
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, myCanvas.height - y, 3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    function clearSpace(ctx){
+      ctx.fillStyle = `rgb(0,0,0)`;
+      ctx.beginPath();
+      ctx.fillRect(0, 0, myCanvas.width, myCanvas.height);
+      ctx.stroke();
+    }
+    
+  </script>
+</body>
+</html>
