@@ -4,27 +4,140 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu</title>
+  <title>ourExperiment</title>
   <style>
-    *{
-      background: black;
+    .logIsTics{
+      display: none;      
+    }
+    embed{
+      width: 90vw;
+      height: 75vh;
+      margin: auto;
+      border: 3px solid gray;
+    }
+    .everySection{
+      /* have to center everything inside */
+      background: azure;
+      display: none; /*to hide every section, except the first one... whitch is not here by the way ;)*/
+    }
+    .theFamousButton{
+      background: red;
       color: white;
     }
-  </style>
+    </style>
 </head>
 <body>
-  <h1>Menú:</h1>
+  <a id="theLink"></a>
+  <div id="logIsTics">
+    
+    <audio src="./audios/11.mp3" bucle class="everyAudio"></audio>
+    <audio src="./audios/22.mp3" bucle class="everyAudio"></audio>
+    <audio src="./audios/33.mp3" bucle class="everyAudio"></audio>
+    <audio src="./audios/44.mp3" bucle class="everyAudio"></audio>
+
+  </div>
+  <!-- ------------------------------------ -->
+  
+  <div id="loadPage" class="everySection" style="display: unset;">
+    
+    <br>
+    <h1>Hello and welcome to the... test!</h1>
+    <br>
+    <h4>When you're ready, press the button to show the instructions, then the questions, then the second lecture and soo on. <b>Let's go!</b></h4>
+    <br>
+    <!-- <h4 id="firstButton">ButtonToNext</h4> -->
+    <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+
+  </div>
+
+  <div id="instructionsPage" class="everySection">
+  
+    <br>
+    <h1>Hello and welcome to the... instructions</h1>
+    <br>
+    <h4>You will have to <b>read a bunch of instructions... </b> whitch goes here:</h4>
+    <br>
+    
+    <br>
+    <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+  
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- spaceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
+  <div class="everySection" name="theFirst">
+    <h2>First Lecture...</h2>
+    <br>
+    <!-- <embed src="./lectures/firstPDF.pdf" type="application/pdf"> -->
+    <img src="https://i.pinimg.com/736x/1d/38/dc/1d38dc2aabbbf2e85c82ecb777c4e4a3.jpg" alt="img1">
+    <br>
+    <h3>Questions:</h3>
+
+    <p>Whats your name?</p>
+    <select class="everyQuestion1">
+      <option value="1" selected>The one</option>
+      <option value="2">The second</option>
+    </select>
+    <br>
+
+    <p>Whats your grade?</p>
+    <select class="everyQuestion1">
+      <option value="1" selected>one</option>
+      <option value="2">two</option>
+    </select>
+    <br>
+    <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+  </div>
+
+
+
+
+
+  <!-- another spaceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
+
+
+<div class="everySection" name="theSecond">
+  <h2>Second Lecture...</h2>
   <br>
-  <ul>
-    <li>
-      <a href="./fly_straight_dammit.html">Tabla rara, peculiar de Jake Sully</a>
-    </li>
-    <li>
-      <a href="./linear_regresion.html">Regresión lineal por "cuadrados mínimos"</a>
-    </li>
-  </ul>
+  <!-- <embed src="./lectures/firstPDF.pdf" type="application/pdf"> -->
+  <img src="https://i0.wp.com/www.imageneseducativas.com/wp-content/uploads/2019/03/CUENTOS-CL%C3%81SICOS-Ejercicios-de-COMPRENSI%C3%93N-LECTORA-8.jpg?resize=709%2C1024&ssl=1" alt="img2">
+  <br>
+  <h3>Questions:</h3>
+
+  <p>Whats your 2nd name?</p>
+  <select class="everyQuestion2">
+    <option value="1" selected>The number one</option>
+    <option value="2">The number two</option>
+  </select>
+  <br>
+
+  <p>Whats your grade?</p>
+  <select class="everyQuestion2">
+    <option value="1" selected>maximum</option>
+    <option value="2">minimum</option>
+  </select>
+  <br>
+  <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+</div>
+
+
+  <!-- and another spaceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
+
+<!-- Here goes the third section -->
+
+
+  <!-- and the final spaceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
   
+  <!-- And here the fourth one -->
+
   
-  <p>More... not available :) Yet</p>
+  <script src="./notSoInteresting.js"></script>
 </body>
 </html>
