@@ -1,3 +1,2 @@
-# temp-node.tut
-A GitHub repository I had to create, to keep learning js on the server.
-From freeCodeCamp.org :D
+# superFast Evaluation of cognitive... stuff
+A GitHub repository I'm recycling to save a school project.
