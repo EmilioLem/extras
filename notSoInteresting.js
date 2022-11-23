@@ -1,5 +1,9 @@
 var theSections = document.getElementsByClassName("everySection");
 var theQuestions1 = document.getElementsByClassName("everyQuestion1");
+var theQuestions2 = document.getElementsByClassName("everyQuestion2");
+//Completar con las 4 lecturas!!!
+//Cambiar el ciclo for de la calificada, de 2 a 4 elementos
+//Cambiar el resultado registrado, de random a... eso
 var theAudio = document.getElementsByClassName("everyAudio");
 var thePagePosition = 0;
 var timeStart = 0;
@@ -32,14 +36,16 @@ function theClick(){
     console.log(`And we've changed to the page ${thePagePosition}`);
     
     timeStart = Date.now();
-    theAudio[thePagePosition - 2].play();
+    if(thePagePosition-2>=0){
+      theAudio[thePagePosition - 2].play();
+    }
     
     
   }else{
     //Calificamos cada sección de preguntas, y guardamos en la BD
     var puntuac = [0,0,0,0];
     const bancoDeRes = [[1,1],[2,2]];
-    for(let i=0; i<4; i++){ //Calificamos la lectura i
+    for(let i=0; i<2; i++){ //Calificamos la lectura i
 
       for(let j=0; j<eval(`theQuestions${i+1}`).length; j++){ //Calificamos la lectura j
         if(eval(`theQuestions${i+1}`).value == bancoDeRes[i][j]){
@@ -49,14 +55,6 @@ function theClick(){
 
     }
 
-
-    //let puntuac1 = 0;
-    //let bancoDeRespu1 = [1,1];
-    /*for(let i=0; i<theQuestions1.length; i++){
-      if(theQuestions1[i].value == bancoDeRespu1[i]){
-        puntuac1++;
-      }
-    }*/
     csvFileData[0][6] = puntuac[0];//(puntuac1 / theQuestions1.length)*10;
     csvFileData[0][7] = puntuac[1];//Math.random() * 5 + 5; //The score in the test
     csvFileData[0][8] = Math.random() * 5 + 5; //The score in the test
@@ -79,7 +77,6 @@ function download_csv_file(theData) {
     csv += "\n";
   });
   var hiddenElement = document.getElementById("theLink");
-  console.log(hiddenElement);
   hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
   hiddenElement.target = '_blank';
   hiddenElement.download = 'data.csv';
