@@ -50,6 +50,8 @@ function theClick(){
       for(let j=0; j<eval(`theQuestions${i+1}`).length; j++){ //Calificamos la lectura j
         if(eval(`theQuestions${i+1}`).value == bancoDeRes[i][j]){
           puntuac[i]++;
+        }else{
+          console.log(`Tuvo mal la ${j+1} de la lectura ${i+1}`);
         }
       }
 
