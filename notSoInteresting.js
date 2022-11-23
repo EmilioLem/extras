@@ -48,10 +48,11 @@ function theClick(){
     for(let i=0; i<2; i++){ //Calificamos la lectura i
 
       for(let j=0; j<eval(`theQuestions${i+1}`).length; j++){ //Calificamos la lectura j
-        if(eval(`theQuestions${i+1}`).value == bancoDeRes[i][j]){
+        if(eval(`theQuestions${i+1}`)[j].value == bancoDeRes[i][j]){
           puntuac[i]++;
         }else{
           console.log(`Tuvo mal la ${j+1} de la lectura ${i+1}`);
+          console.log(eval(`theQuestions${i+1}`)[j].value);
         }
       }
 
