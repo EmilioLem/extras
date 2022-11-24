@@ -20,10 +20,40 @@
       background: azure;
       display: none; /*to hide every section, except the first one... whitch is not here by the way ;)*/
     }
-    .theFamousButton{
-      background: red;
-      color: white;
+
+    .theFamousButton {
+      background-color: #222;
+      border-radius: 4px;
+      border-style: none;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+      margin: 0;
+      max-width: none;
+      min-height: 44px;
+      min-width: 10px;
+      outline: none;
+      overflow: hidden;
+      padding: 9px 20px 8px;
+      position: relative;
+      text-align: center;
+      text-transform: none;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: 100%;
     }
+
+    .theFamousButton:hover,.theFamousButton:focus {
+      opacity: .75;
+    }
+
+
     .theQuest{
       display: none;
     }
@@ -56,7 +86,7 @@
     <h4>When you're ready, press the button to show the instructions, then the questions, then the second lecture and soo on. <b>Let's go!</b></h4>
     <br>
     <!-- <h4 id="firstButton">ButtonToNext</h4> -->
-    <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+    <h4 class="theFamousButton" onclick="theClick()">Click para continuar</h4>
 
   </div>
 
@@ -69,7 +99,7 @@
     <br>
     
     <br>
-    <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+    <h4 class="theFamousButton" onclick="theClick()">Click para continuar</h4>
   
   </div>
 
@@ -121,9 +151,18 @@
           <option value="5">Organizar el conocimiento.</option>
         </select>
         <br>
+        
+        <!-- The invented question [3] of the first lecture -->
+        <p>¿Cómo es la formación de los científicos?</p>
+        <select class="everyQuestion1">
+          <option value="1">Homogénea, pues todos pasan por la misma revisión y utiizan las mismas bases.</option>
+          <option value="2">Heterogénea, se aprovechan las fortalezas y se ignoran las debilidades.</option>
+          <option value="3">Homogénea, pues los problemas que van a resolver son universales.</option>
+          <option value="4">Heterogénea, pues cada quién estudia el problema que va a resolver.</option>
+        </select>
 
         <br>
-        <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+        <h4 class="theFamousButton" onclick="theClick()">Click para continuar</h4>
       </div>
   </div>
 
@@ -182,7 +221,8 @@
     </select>
     <br>
 
-    <p>Se infiere del texto que si Heráclito retornara a nuestro tiempo,</p>
+    <!-- Era la pregunta [3] de la lectura 2
+      <p>Se infiere del texto que si Heráclito retornara a nuestro tiempo,</p>
     <select class="everyQuestion2">
       <option value="1">Estaría de acuerdo con la ampliación de la cultura culta.</option>
       <option value="2">Quedaría perplejo por la existencia de la cultura aristocrática.</option>
@@ -190,7 +230,7 @@
       <option value="4">Observaría con enfado la posición de los “apocalípticos”.</option>
       <option value="5">Mostraría entusiasmo con la existencia de la televisión.</option>
     </select>
-    <br>
+    <br> -->
 
     <p>Si el autor acertara en su hipótesis de que el discurso apocalíptico cobra sentido último en las masas que se constituyen en signo de nuestro tiempo, entonces</p>
     <select class="everyQuestion2">
@@ -201,7 +241,7 @@
       <option value="5">Validaría el accionar cotidiano de los integrados.</option>
     </select>
 
-    <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+    <h4 class="theFamousButton" onclick="theClick()">Click para continuar</h4>
   </div>
 </div>
 
@@ -239,7 +279,8 @@
     </select>
     <br>
 
-    <p>A las intuiciones acertadas y los errores de la frenología de Gall.</p>
+    <!-- Era la pregunta [1] de la lectura 3
+      <p>A las intuiciones acertadas y los errores de la frenología de Gall.</p>
     <select class="everyQuestion3">
       <option value="1">A las intuiciones acertadas y los errores de la frenología de Gall.</option>
       <option value="2">A la influencia de la frenología en la neurociencia del siglo XX.</option>
@@ -247,7 +288,7 @@
       <option value="4">A la crítica de la frenología al pensamiento psicológico dualista.</option>
       <option value="5"></option>
     </select>
-    <br>
+    <br> -->
 
     <p>¿Cuál de los siguientes enunciados es incompatible con lo aseverado en el texto?</p>
     <select class="everyQuestion3">
@@ -279,7 +320,7 @@
     </select>
     <br>
 
-    <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+    <h4 class="theFamousButton" onclick="theClick()">Click para continuar</h4>
   </div>
 </div>
 
@@ -343,7 +384,7 @@
       </select>
       <br>
 
-      <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+      <h4 class="theFamousButton" onclick="theClick()">Click para continuar</h4>
     </div>
   </div>
 
