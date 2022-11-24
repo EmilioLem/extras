@@ -1,3 +1,6 @@
+//Remover la 3er pregunta de la lectura 2
+//
+
 var theSections = document.getElementsByClassName("everySection");
 var theQuestions1 = document.getElementsByClassName("everyQuestion1");
 var theQuestions2 = document.getElementsByClassName("everyQuestion2");
@@ -54,7 +57,7 @@ function theClick(){
     //Calificamos cada sección de preguntas, y guardamos en la BD
     var puntuac = [0,0,0,0];
     //a1 b2 c3 d4 e5
-    const bancoDeRes = [[5,5,3],[2,1,5,3,2],[4,1,2,3,5],[3,5,3,4]];
+    const bancoDeRes = [[5,5,3, /**/ 4],[2,1,5, /*3,*/ 2],[4, /*1,*/ 2,3,5],[3,5,3,4]];
     for(let i=0; i<4; i++){ //Calificamos la lectura i
 
       for(let j=0; j<eval(`theQuestions${i+1}`).length; j++){ //Calificamos la lectura j
