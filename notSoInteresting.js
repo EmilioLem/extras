@@ -53,7 +53,8 @@ function theClick(){
   }else{
     //Calificamos cada sección de preguntas, y guardamos en la BD
     var puntuac = [0,0,0,0];
-    const bancoDeRes = [[1,1],[2,2],[1,1],[2,2]];
+    //a1 b2 c3 d4 e5
+    const bancoDeRes = [[5,5,3],[2,1,5,3,2],[4,1,2,3,5],[3,5,3,4]];
     for(let i=0; i<4; i++){ //Calificamos la lectura i
 
       for(let j=0; j<eval(`theQuestions${i+1}`).length; j++){ //Calificamos la lectura j
@@ -64,13 +65,13 @@ function theClick(){
           console.log(eval(`theQuestions${i+1}`)[j].value);
         }
       }
-
+      puntuac[i] = puntuac[i] * 10 / eval(`theQuestions${i+1}`).length; //Convertimos de puntos a puntaje/10
     }
 
-    csvFileData[0][6] = puntuac[0];//(puntuac1 / theQuestions1.length)*10;
-    csvFileData[0][7] = puntuac[1];//Math.random() * 5 + 5; //The score in the test
-    csvFileData[0][8] = puntuac[1];//Math.random() * 5 + 5; //The score in the test
-    csvFileData[0][9] = puntuac[1];//Math.random() * 5 + 5; //The score in the test
+    csvFileData[0][6] = puntuac[0];
+    csvFileData[0][7] = puntuac[1];
+    csvFileData[0][8] = puntuac[2];
+    csvFileData[0][9] = puntuac[3];
     // alert('Acabamos con las secciones, eh... pues ya. Chao');
     download_csv_file(csvFileData);
     
