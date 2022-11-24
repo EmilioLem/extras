@@ -1,7 +1,11 @@
 var theSections = document.getElementsByClassName("everySection");
 var theQuestions1 = document.getElementsByClassName("everyQuestion1");
 var theQuestions2 = document.getElementsByClassName("everyQuestion2");
-//Completar con las 4 lecturas!!!
+var theQuestions3 = document.getElementsByClassName("everyQuestion3");
+var theQuestions4 = document.getElementsByClassName("everyQuestion4");
+var theImages = document.getElementsByClassName("theImage");
+var theQuest = document.getElementsByClassName("theQuest");
+
 //Cambiar el ciclo for de la calificada, de 2 a 4 elementos
 //Cambiar el resultado registrado, de random a... eso
 var theAudio = document.getElementsByClassName("everyAudio");
@@ -11,6 +15,11 @@ var csvFileData = [
   //Annotations1,Annotations2,Lecture1time, Lecture2time, Lecture3time, Lecture4time, score1, score2, score3, score4\n'
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ];
+
+function pasaApreguntas(){
+  theImages[thePagePosition-2].style.display = "none";
+  theQuest[thePagePosition-2].style.display = "unset";
+}
 
 function theClick(){
   
@@ -44,8 +53,8 @@ function theClick(){
   }else{
     //Calificamos cada sección de preguntas, y guardamos en la BD
     var puntuac = [0,0,0,0];
-    const bancoDeRes = [[1,1],[2,2]];
-    for(let i=0; i<2; i++){ //Calificamos la lectura i
+    const bancoDeRes = [[1,1],[2,2],[1,1],[2,2]];
+    for(let i=0; i<4; i++){ //Calificamos la lectura i
 
       for(let j=0; j<eval(`theQuestions${i+1}`).length; j++){ //Calificamos la lectura j
         if(eval(`theQuestions${i+1}`)[j].value == bancoDeRes[i][j]){
@@ -60,8 +69,8 @@ function theClick(){
 
     csvFileData[0][6] = puntuac[0];//(puntuac1 / theQuestions1.length)*10;
     csvFileData[0][7] = puntuac[1];//Math.random() * 5 + 5; //The score in the test
-    csvFileData[0][8] = Math.random() * 5 + 5; //The score in the test
-    csvFileData[0][9] = Math.random() * 5 + 5; //The score in the test
+    csvFileData[0][8] = puntuac[1];//Math.random() * 5 + 5; //The score in the test
+    csvFileData[0][9] = puntuac[1];//Math.random() * 5 + 5; //The score in the test
     // alert('Acabamos con las secciones, eh... pues ya. Chao');
     download_csv_file(csvFileData);
     
