@@ -24,6 +24,16 @@
       background: red;
       color: white;
     }
+    .theQuest{
+      display: none;
+    }
+    .theImage{
+      display: unset;
+      text-align: center;
+    }
+    img{
+      width: 96vw;
+    }
     </style>
 </head>
 <body>
@@ -66,34 +76,39 @@
 
 
 
-
-
-
-
-
   <!-- spaceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
-  <div class="everySection" name="theFirst">
+  <div class="everySection">
     <h2>First Lecture...</h2>
     <br>
     <!-- <embed src="./lectures/firstPDF.pdf" type="application/pdf"> -->
-    <img src="https://i.pinimg.com/736x/1d/38/dc/1d38dc2aabbbf2e85c82ecb777c4e4a3.jpg" alt="img1">
-    <br>
-    <h3>Questions:</h3>
+      <div class="theImage">
+        <img src="./lectures/1.1.png" alt="img1.1">
+        <img src="./lectures/1.2.png" alt="img1.2">
+        <img src="./lectures/1.3.png" alt="img1.3">
+      </div>
+      
+      <br>
+      <button onclick="pasaApreguntas()">Clickeame para pasar a las preguntas</button>
+      <br>
 
-    <p>Whats your name?</p>
-    <select class="everyQuestion1">
-      <option value="1" selected>The one</option>
-      <option value="2">The second</option>
-    </select>
-    <br>
-
-    <p>Whats your grade?</p>
-    <select class="everyQuestion1">
-      <option value="1" selected>one</option>
-      <option value="2">two</option>
-    </select>
-    <br>
-    <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+      <div class="theQuest">
+        <h3>Questions:</h3>
+        
+        <p>Whats your name?</p>
+        <select class="everyQuestion1">
+          <option value="1">The one</option>
+          <option value="2">The second</option>
+        </select>
+        <br>
+        
+        <p>Whats your grade?</p>
+        <select class="everyQuestion1">
+          <option value="1">one</option>
+          <option value="2">two</option>
+        </select>
+        <br>
+        <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+      </div>
   </div>
 
 
@@ -103,39 +118,119 @@
   <!-- another spaceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
 
 
-<div class="everySection" name="theSecond">
+<div class="everySection">
   <h2>Second Lecture...</h2>
   <br>
   <!-- <embed src="./lectures/firstPDF.pdf" type="application/pdf"> -->
-  <img src="https://i0.wp.com/www.imageneseducativas.com/wp-content/uploads/2019/03/CUENTOS-CL%C3%81SICOS-Ejercicios-de-COMPRENSI%C3%93N-LECTORA-8.jpg?resize=709%2C1024&ssl=1" alt="img2">
-  <br>
-  <h3>Questions:</h3>
+  <div class="theImage">
+    <img src="./lectures/2.1.png" alt="img2.1">
+    <img src="./lectures/2.2.png" alt="img2.2">
+    <img src="./lectures/2.3.png" alt="img2.3">
+    <img src="./lectures/2.4.png" alt="img2.4">
+    <img src="./lectures/2.5.png" alt="img2.5">
+  </div>
 
-  <p>Whats your 2nd name?</p>
-  <select class="everyQuestion2">
-    <option value="1" selected>The number one</option>
-    <option value="2">The number two</option>
-  </select>
+  <br>
+  <button onclick="pasaApreguntas()">Clickeame para pasar a las preguntas</button>
   <br>
 
-  <p>Whats your grade?</p>
-  <select class="everyQuestion2">
-    <option value="1" selected>maximum</option>
-    <option value="2">minimum</option>
-  </select>
-  <br>
-  <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+  <div class="theQuest">
+    <h3>Questions:</h3>
+
+    <p>Whats your name?</p>
+    <select class="everyQuestion2">
+      <option value="1">The one</option>
+      <option value="2">The second</option>
+    </select>
+    <br>
+
+    <p>Whats your grade?</p>
+    <select class="everyQuestion2">
+      <option value="1">one</option>
+      <option value="2">two</option>
+    </select>
+    <br>
+    <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+  </div>
 </div>
+
 
 
   <!-- and another spaceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
 
-<!-- Here goes the third section -->
 
+<div class="everySection">
+  <h2>Third Lecture...</h2>
+  <br>
+  <!-- <embed src="./lectures/firstPDF.pdf" type="application/pdf"> -->
+  <div class="theImage">
+    <img src="./lectures/3.1.png" alt="img3.1">
+    <img src="./lectures/3.2.png" alt="img3.2">
+    <img src="./lectures/3.3.png" alt="img3.3">
+    <img src="./lectures/3.4.png" alt="img3.4">
+    <img src="./lectures/3.5.png" alt="img3.5">
+  </div>
+
+  <br>
+  <button onclick="pasaApreguntas()">Clickeame para pasar a las preguntas</button>
+  <br>
+
+  <div class="theQuest">
+    <h3>Questions:</h3>
+
+    <p>Whats your name?</p>
+    <select class="everyQuestion3">
+      <option value="1">The one</option>
+      <option value="2">The second</option>
+    </select>
+    <br>
+
+    <p>Whats your grade?</p>
+    <select class="everyQuestion3">
+      <option value="1">one</option>
+      <option value="2">two</option>
+    </select>
+    <br>
+    <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+  </div>
+</div>
 
   <!-- and the final spaceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
   
-  <!-- And here the fourth one -->
+  <div class="everySection">
+    <h2>Fourth Lecture...</h2>
+    <br>
+    <!-- <embed src="./lectures/firstPDF.pdf" type="application/pdf"> -->
+    <div class="theImage">
+      <img src="./lectures/4.1.png" alt="img4.1">
+      <img src="./lectures/4.2.png" alt="img4.2">
+      <img src="./lectures/4.3.png" alt="img4.3">
+      <img src="./lectures/4.4.png" alt="img4.4">
+    </div>
+  
+    <br>
+    <button onclick="pasaApreguntas()">Clickeame para pasar a las preguntas</button>
+    <br>
+  
+    <div class="theQuest">
+      <h3>Questions:</h3>
+  
+      <p>Whats your name?</p>
+      <select class="everyQuestion4">
+        <option value="1">The one</option>
+        <option value="2">The second</option>
+      </select>
+      <br>
+  
+      <p>Whats your grade?</p>
+      <select class="everyQuestion4">
+        <option value="1">one</option>
+        <option value="2">two</option>
+      </select>
+      <br>
+      <h4 class="theFamousButton" onclick="theClick()">ButtonTo... yeah</h4>
+    </div>
+  </div>
 
   
   <script src="./notSoInteresting.js" defer></script>
